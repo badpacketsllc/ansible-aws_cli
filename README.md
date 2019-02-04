@@ -1,9 +1,9 @@
 Ansible role: aws_cli
 =====================
 
-![Build status](https://img.shields.io/travis/com/badpacketsllc/ansible-aws_cli.svg?style=flat)
-![License](https://img.shields.io/github/license/badpacketsllc/ansible-aws_cli.svg?style=flat)
-![Follow us on twitter](https://img.shields.io/twitter/follow/bad_packets.svg?style=social)
+[![Build status](https://img.shields.io/travis/com/badpacketsllc/ansible-aws_cli.svg?style=flat)](https://travis-ci.com/badpacketsllc/ansible-aws_cli)
+[![License](https://img.shields.io/github/license/badpacketsllc/ansible-aws_cli.svg?style=flat)](https://github.com/badpacketsllc/ansible-aws_cli/blob/master/LICENSE)
+[![Follow us on twitter](https://img.shields.io/twitter/follow/bad_packets.svg?style=social)](https://twitter.com/bad_packets/)
 
 Description
 -----------
@@ -78,7 +78,7 @@ Example Playbook
             aws_secret_access_key: wJalrXUtnFEMI/F3GXCLG/bPxRfiCYEXAMPLEKEY
 ```
 
-You can find more examples in the test suite.
+You can find more examples in the [test suite](https://github.com/badpacketsllc/ansible-aws_cli/blob/master/molecule/default/playbook.yml).
 
 Note: do not put cleartext secrets under version control. Consider using an
 [encrypted file](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
