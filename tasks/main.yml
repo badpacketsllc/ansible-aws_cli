@@ -2,8 +2,7 @@
 - name: Install awscli
   package:
     name: awscli
-  ignore_errors: yes
-  register: result
+  become: yes
 
 - name: Set home directory to /root
   set_fact:

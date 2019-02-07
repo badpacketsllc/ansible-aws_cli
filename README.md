@@ -133,3 +133,9 @@ Author Information
 [@mat_packets](https://twitter.com/mat_packets)
 
 [Bad Packets LLC](https://badpackets.net)
+
+Contributors
+------------
+
+Special thanks to:
+- [crashsystems](http://crashsystems.net/) for his code review.
