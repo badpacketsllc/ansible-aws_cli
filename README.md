@@ -60,7 +60,7 @@ Role Variables
 | aws_cli_user_group    | `{{ aws_cli_user }}`                                                                                                                                             |                                                                                                               | no       |
 | aws_user_dir          | `"/home/{{ aws_cli_user }}/.aws"`                                                                                                                                | home directory of the user who will run the `aws` command                                                     | no       |                                                         | no       |
 | profiles              | none                                                                                                                                                             | `aws` [profile names](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)           | no       |
-| region                | none                                                                                                                                                             | region `aws` commands are ran                                                                                 | no       |
+| region                | none                                                                                                                                                             | aws region where your resources life                                                                          | no       |
 | output                | none                                                                                                                                                             | cli output format                                                                                             | no       |
 | aws_access_key_id     | none                                                                                                                                                             | aws iam [access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)        | no       |
 | aws_secret_access_key | none                                                                                                                                                             | aws iam [secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) | no       |
@@ -90,8 +90,8 @@ $ cat ~/.aws/config
 # Ansible managed
 
 [default]
-region = us-east-2
-output = json
+region = us-east-1
+output = text
 
 ```
 
@@ -100,8 +100,8 @@ $ cat ~/.aws/credentials
 # Ansible managed
 
 [default]
-aws_access_key_id = 1
-aws_secret_access_key = 1
+aws_access_key_id = AKIAIOSDNKOW7EXAMPLE
+aws_secret_access_key = wJalrXUtnFEMI/F3GXCLG/bPxRfiCYEXAMPLEKEY
 
 ```
 
