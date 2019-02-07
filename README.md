@@ -17,10 +17,12 @@ A role to install and configure the
 This role features:
 - Full test coverage.
 - Support for configuring as many roles are you like.
-- Configuration of variables on both the role- or profile-level.
-- No default profile configuration variables. This is handy if you want the
-  role to only install the AWS CLI and prefer to configure things using
-  environment variables.
+- Configuration of variables on both the role- or profile-level. Profile-level
+  variables take precedence over role-level variables. 
+- No default profile-level configuration variables.
+- Writing nothing to config files when nothing is provided. If you want the
+  role to only install the AWS CLI and prefer to configure things
+  using environment variables.
 - Global definition of AWS CLI variables. For example, if you want to use the
   `us-east-2` region throughout every profile, just use `region: us-east-2`
   in your playbook.
@@ -56,10 +58,10 @@ Role Variables
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------|
 | aws_cli_user          | [{{ ansible_user }}](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html?highlight=ansible_user#variables-discovered-from-systems-facts) | name of the user who will run the `aws` command                                                               | no       |
 | aws_cli_user_group    | `{{ aws_cli_user }}`                                                                                                                                             |                                                                                                               | no       |
-| aws_user_dir          | `"/home/{{ aws_cli_user }}/.aws"`                                                                                                                                     | home directory of the user who will run the `aws` command                                                | no       |                                                         | no       |
+| aws_user_dir          | `"/home/{{ aws_cli_user }}/.aws"`                                                                                                                                | home directory of the user who will run the `aws` command                                                     | no       |                                                         | no       |
 | profiles              | none                                                                                                                                                             | `aws` [profile names](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)           | no       |
-| region                | none                                                                                                                                                             | region `aws` commands are ran                                                                                 | no       |
-| output                | none                                                                                                                                                             | cli output format                                                                                             | no       |
+| region                | us-east-1                                                                                                                                                        | region `aws` commands are ran                                                                                 | no       |
+| output                | json                                                                                                                                                             | cli output format                                                                                             | no       |
 | aws_access_key_id     | none                                                                                                                                                             | aws iam [access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)        | no       |
 | aws_secret_access_key | none                                                                                                                                                             | aws iam [secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) | no       |
 
@@ -81,7 +83,30 @@ Example Playbook
             aws_secret_access_key: wJalrXUtnFEMI/F3GXCLG/bPxRfiCYEXAMPLEKEY
 ```
 
-You can find more examples in the [test suite](https://github.com/badpacketsllc/ansible-aws_cli/blob/master/molecule/default/playbook.yml).
+#### Results:
+
+```shell
+$ cat ~/.aws/config
+# Ansible managed
+
+[default]
+region = us-east-2
+output = json
+
+```
+
+```shell
+$ cat ~/.aws/credentials
+# Ansible managed
+
+[default]
+aws_access_key_id = 1
+aws_secret_access_key = 1
+
+```
+
+You can find more examples, including the use of multiple profiles, in the
+[test suite](https://github.com/badpacketsllc/ansible-aws_cli/blob/master/molecule/default/playbook.yml).
 
 Note: do not put cleartext secrets under version control. Consider using an
 [encrypted file](https://docs.ansible.com/ansible/latest/user_guide/vault.html)

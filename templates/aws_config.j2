@@ -1,12 +1,15 @@
 # {{ ansible_managed }}
 
 {% for profile in profiles %}
-[{{ profile }}]
+{% if ((region is defined or profile.region is defined) or
+       (output is defined or profile.output is defined)) %}
+[{{ profile.name }}]
 {% if region is defined or profile.region is defined %}
-region = {{ region|default(profile.region) }}
+region = {{ profile.region|default(region) }}
 {% endif %}
 {% if output is defined or profile.output is defined %}
-output = {{ output|default(profile.output) }}
+output = {{ profile.output|default(output) }}
+{% endif %}
 {% endif %}
 
 {% endfor %}
