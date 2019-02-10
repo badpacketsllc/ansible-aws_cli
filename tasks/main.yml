@@ -3,6 +3,15 @@
   package:
     name: awscli
   become: yes
+  when: >
+    ansible_distribution != 'Amazon'
+
+- name: Install aws-cli
+  package:
+    name: aws-cli
+  become: yes
+  when: >
+    ansible_distribution == 'Amazon'
 
 - name: Set home directory to /root
   set_fact:
