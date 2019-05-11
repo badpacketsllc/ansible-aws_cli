@@ -17,7 +17,7 @@ def credentials_file(host):
 
 
 def test_aws_cli_should_be_installed(host):
-    assert host.run('aws --v').rc is 0
+    assert host.run('aws --v').rc == 0
 
 
 def test_aws_cli_files_should_exist(host, config_file, credentials_file):
