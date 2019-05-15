@@ -70,13 +70,15 @@ Example Playbook
 
 ```yaml
 ---
-- hosts: servers
-  - name: Set up aws-cli
-    import_role:
-      name: badpacketsllc.aws_cli
-    vars:
-      profiles:
-        - default:
+- hosts: all
+
+  tasks:
+    - name: Set up aws-cli
+      import_role:
+        name: badpacketsllc.aws_cli
+      vars:
+        profiles:
+          - name: default
             region: us-east-1
             output: text
             aws_access_key_id: AKIAIOSDNKOW7EXAMPLE
