@@ -21,7 +21,7 @@ galaxy_info:
       versions:
         - stretch
         - jessie
-        -buster
+        - buster
     - name: Ubuntu
       versions:
         - bionic
