@@ -5,9 +5,12 @@ galaxy_info:
   author: 'Mathew Woodyard'
   company: 'Bad Packets LLC'
   license: 'GPLv3'
-  min_ansible_version: 2.0
+  min_ansible_version: 2.4
   platforms:
     - name: Amazon
+      versions:
+        - 2018.03
+    - name: Amazon Linux 2
       versions:
         - all
     - name: EL
@@ -15,8 +18,8 @@ galaxy_info:
         - 7
     - name: Fedora
       versions:
-        - 29
-        - 30
+        - 31
+        - 32
     - name: Debian
       versions:
         - stretch
