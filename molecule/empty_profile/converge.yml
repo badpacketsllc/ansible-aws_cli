@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include ansible-aws_cli
+      include_role:
+        name: ansible-aws_cli
