@@ -16,7 +16,7 @@ A role to install and configure the
 
 This role features:
 - Full test coverage.
-- Support for configuring as many roles are you like.
+- Support for configuring as many AWS profiles are you like.
 - Configuration of variables on both the role- or profile-level. Profile-level
   variables take precedence over role-level variables. 
 - No default profile-level configuration variables.
