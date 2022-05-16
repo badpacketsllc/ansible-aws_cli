@@ -74,4 +74,4 @@ Responsibilities
 ----------------
 
 1. Create issues for any bugs, changes or enhancements.
-2. Be welcoming and nice as outlined in our Code of Conduct (https://www.contributor-covenant.org/version/1/4/code-of-conduct).
+2. Be welcoming and nice as outlined in our Code of Conduct (https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
