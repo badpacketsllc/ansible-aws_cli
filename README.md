@@ -1,7 +1,6 @@
 Ansible role: aws_cli
 =====================
 
-[![Build status](https://img.shields.io/travis/com/badpacketsllc/ansible-aws_cli.svg?style=flat)](https://travis-ci.com/badpacketsllc/ansible-aws_cli)
 [![Ansible role](https://img.shields.io/ansible/role/37536.svg?style=flat)](https://galaxy.ansible.com/badpacketsllc/aws_cli)
 [![Ansible role quality](https://img.shields.io/ansible/quality/37536.svg?style=flat)](https://galaxy.ansible.com/badpacketsllc/aws_cli)
 [![Ansible role downloads](https://img.shields.io/ansible/role/d/37536.svg?style=flat)](https://galaxy.ansible.com/badpacketsllc/aws_cli)
@@ -141,16 +140,14 @@ Please be nice and follow our
 License
 -------
 
-GPLv3
+Apache License 2.0
 
 Author Information
 ------------------
 
-[Mathew Woodyard](https://www.woodrad.com)
+[Mathew Woodyard](https://www.matwoodyard.com)
 
-[@mat_packets](https://twitter.com/mat_packets)
-
-[Bad Packets LLC](https://badpackets.net)
+[@ctidelivery](https://twitter.com/ctidelivery)
 
 Contributors
 ------------
